@@ -82,7 +82,7 @@ def main() -> None:
 
     # 8. Run quality checks va freshness report
     print("Running data quality checks and freshness report...")
-    quality_report = run_data_quality_checks(df, settings, report_name="baseline")
+    quality_report = run_data_quality_checks(df, settings, stage="baseline")
     freshness_report = build_freshness_report(df, settings, settings.paths.freshness_report)
 
     # 9. Tao markdown report

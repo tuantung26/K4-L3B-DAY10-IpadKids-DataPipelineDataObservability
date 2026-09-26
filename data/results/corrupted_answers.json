@@ -208,7 +208,7 @@
     "ground_truth_doc_ids": [
       "10.7717/peerj-cs.3882"
     ],
-    "answer": "nan",
+    "answer": "",
     "retrieved_doc_ids": [
       "10.7717/peerj-cs.3882",
       "10.20944/preprints202604.0339.v1",

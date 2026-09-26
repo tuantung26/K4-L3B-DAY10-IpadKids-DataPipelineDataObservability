@@ -5,7 +5,7 @@
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
 | Họ và tên       | Ngô Tuấn Tùng             |
-| MSSV               | [Điền MSSV của bạn]                     |
+| MSSV               | 2A202602826                     |
 | Khóa/Lớp         | K4              |
 | Tên nhóm         | IpadKids     |
 | Vai trò chính    | Recovery & Phase 2                 |

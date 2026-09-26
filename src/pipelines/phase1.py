@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from core.config import load_settings
+from core.config import Settings, load_settings
 from core.utils import now_utc, read_json, write_csv, write_json
 from evaluation.metrics import evaluate_pipeline
 from evaluation.testset import build_test_set
@@ -12,26 +12,10 @@ from retrieval.index import LocalEmbeddingIndex
 from retrieval.qa import answer_question
 
 
-def main() -> None:
-    """Xay dung baseline pipeline end-to-end.
-
-    Pseudo-code:
-    1. Load settings.
-    2. Load hoac fetch raw records.
-    3. Clean data.
-    4. Save clean CSV/JSON.
-    5. Build Chroma index.
-    6. Tao hoac load evaluation set.
-    7. Evaluate.
-    8. Run quality checks va freshness report.
-    9. Tao markdown report.
-    10. Co the demo agent tren vai sample question.
-    """
-    # 1. Load settings
-    settings = load_settings()
+def run_phase1_pipeline(settings: Settings) -> None:
     print(f"Loaded settings: LLM provider={settings.llm_provider}, model={settings.model_name}")
 
-    # 2. Load hoac fetch raw records
+    # 1. Load hoac fetch raw records
     if settings.refresh_source or not settings.paths.raw_records_json.exists():
         print("Fetching raw records from Crossref API...")
         records = fetch_source_records(settings)
@@ -40,17 +24,17 @@ def main() -> None:
         records = load_raw_records(settings.paths.raw_records_json)
     print(f"Loaded {len(records)} raw records.")
 
-    # 3. Clean data
+    # 2. Clean data
     print("Cleaning raw records into DataFrame...")
     df = build_clean_dataframe(records, run_date=now_utc())
     print(f"Cleaned DataFrame contains {len(df)} rows.")
 
-    # 4. Save clean CSV/JSON
+    # 3. Save clean CSV/JSON
     print(f"Saving clean data to {settings.paths.clean_csv} and {settings.paths.clean_json}...")
     write_csv(df, settings.paths.clean_csv)
     write_json(settings.paths.clean_json, df.to_dict(orient="records"))
 
-    # 5. Build Chroma index
+    # 4. Build Chroma index
     print(f"Building Chroma vector index ({settings.baseline_collection_name})...")
     index = LocalEmbeddingIndex.build(
         df=df,
@@ -58,7 +42,7 @@ def main() -> None:
         embeddings_output_path=settings.paths.embeddings_json,
     )
 
-    # 6. Tao hoac load evaluation set
+    # 5. Tao hoac load evaluation set
     if settings.refresh_test_set or not settings.paths.eval_testset.exists():
         print(f"Generating benchmark test set at {settings.paths.eval_testset}...")
         test_set = build_test_set(df, settings.paths.eval_testset)
@@ -67,7 +51,7 @@ def main() -> None:
         test_set = read_json(settings.paths.eval_testset)
     print(f"Benchmark test set ready with {len(test_set)} questions.")
 
-    # 7. Evaluate
+    # 6. Evaluate
     print("Running baseline pipeline evaluation...")
     bundle = evaluate_pipeline(
         settings=settings,
@@ -80,12 +64,12 @@ def main() -> None:
     token_f1 = bundle.summary.get("mean_token_f1", 0.0)
     print(f"Baseline metrics: Retrieval Hit Rate = {hit_rate:.2%}, Mean Token F1 = {token_f1:.4f}")
 
-    # 8. Run quality checks va freshness report
+    # 7. Run quality checks va freshness report
     print("Running data quality checks and freshness report...")
     quality_report = run_data_quality_checks(df, settings, stage="baseline")
     freshness_report = build_freshness_report(df, settings, settings.paths.freshness_report)
 
-    # 9. Tao markdown report
+    # 8. Tao markdown report
     print(f"Generating Phase 1 markdown report at {settings.paths.baseline_report}...")
     source_summary = {
         "total_records": len(records),
@@ -102,7 +86,7 @@ def main() -> None:
         freshness=freshness_report,
     )
 
-    # 10. Co the demo agent tren vai sample question
+    # 9. Co the demo agent tren vai sample question
     print("Running agent demo on sample questions...")
     demo_samples = test_set[:3] if test_set else []
     demo_answers = []
@@ -121,5 +105,6 @@ def main() -> None:
     print("Phase 1 baseline pipeline completed successfully.")
 
 
-if __name__ == "__main__":
-    main()
+def main() -> None:
+    settings = load_settings()
+    run_phase1_pipeline(settings)

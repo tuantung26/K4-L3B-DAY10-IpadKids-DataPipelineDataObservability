@@ -56,9 +56,16 @@ def build_clean_dataframe(records: list[PaperRecord], run_date: datetime) -> pd.
             categories = [_normalize_whitespace(c) for c in raw_categories if _normalize_whitespace(c)]
         else:
             categories = [_normalize_whitespace(str(raw_categories))]
+        if not categories:
+            fallback = (
+                _normalize_whitespace(rec_dict.get("primary_category"))
+                or _normalize_whitespace(rec_dict.get("comment"))
+                or "Computer Science"
+            )
+            categories = [fallback]
         categories_joined = ", ".join(categories)
 
-        primary_category = str(rec_dict.get("primary_category") or (categories[0] if categories else "")).strip()
+        primary_category = str(rec_dict.get("primary_category") or categories[0]).strip()
         published = str(rec_dict.get("published") or "").strip()
         updated = str(rec_dict.get("updated") or "").strip()
         abs_url = str(rec_dict.get("abs_url") or "").strip()

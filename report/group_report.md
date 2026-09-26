@@ -6,20 +6,21 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Khóa/Lớp         | [K4]              |
+| Tên nhóm         | [IpadKids]     |
+| Repository         | [https://github.com/tuantung26/K4-L3B-DAY10-IpadKids-DataPipelineDataObservability] |
+| Ngày hoàn thành | [26/09/2026]               |
 
 ### Thành viên và phân công
 
 | STT | Họ và tên | MSSV | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- |
-| 1 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 2 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 3 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 4 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 5 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
+| 1 | [Ngô Tuấn Tùng] | [MSSV] | [Recovery & Phase 2] | [data/reports/corruption_report.md, script/run_corruption_flow.py] |
+| 2 | [Nguyễn Văn Giáp] | [2A202602903] | [Evaluation & Phase 1] | [data/eval/test_set.json, data/reports/phase1_report.md, script/run_phase1.py] |
+| 3 | [Cao Đức Hiệp] | [2A202602550] | [Data Cleaning & Quality] | [src/ingestion/cleaning.py, src/observability/quality.py] |
+| 4 | [Phùng Đình Triển] | [2A202602837] | [Data Ingestion] | [data/raw/crossref_response.json, data/raw/crossref_records.json, data/results/corruption_log.json] |
+
+
 
 ## 2. Tóm tắt kết quả
 

@@ -26,7 +26,7 @@ def repair_from_raw_snapshot(settings: Settings) -> pd.DataFrame:
 def run_corruption_flow_pipeline(settings: Settings) -> None:
     print("1. Loading baseline metrics and clean dataset...")
     baseline_metrics = read_json(settings.paths.baseline_metrics)
-    clean_df = pd.read_csv(settings.paths.clean_csv)
+    clean_df = pd.read_csv(settings.paths.clean_csv, keep_default_na=False).fillna("")
 
     print("2. Creating corrupted dataframe...")
     corrupted_df = corrupt_clean_dataframe(clean_df, settings.paths.corruption_log)

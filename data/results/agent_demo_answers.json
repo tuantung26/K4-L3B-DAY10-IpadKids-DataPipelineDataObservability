@@ -1,0 +1,53 @@
+[
+  {
+    "id": "q_01",
+    "question": "What is the summary of the paper 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models'?",
+    "answer": "Designers, engineers, and building officials face increasing pressure to accelerate and improve the accuracy of design review for buildings and infrastructure.",
+    "retrieved_doc_ids": [
+      "10.3390/buildings16132637",
+      "10.63646/kpqm1958",
+      "10.21203/rs.3.rs-10423755/v1",
+      "10.21203/rs.3.rs-10349437/v1"
+    ],
+    "retrieved_titles": [
+      "An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models",
+      "The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges",
+      "Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study",
+      "Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems"
+    ]
+  },
+  {
+    "id": "q_02",
+    "question": "Who authored the paper '\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)'?",
+    "answer": "\u0418.\u0412. \u0415\u0440\u043c\u0430\u043a\u043e\u0432, \u0412.\u0412. \u0424\u0438\u043b\u0430\u0442\u043e\u0432",
+    "retrieved_doc_ids": [
+      "10.47576/2949-1894.2026.7.7.023",
+      "10.7717/peerj-cs.3882",
+      "10.63646/kpqm1958",
+      "10.52060/juptik.v4i1.4318"
+    ],
+    "retrieved_titles": [
+      "\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)",
+      "A large language model-driven scientific literature surveys generation framework based on multi-agents and retrieval-augmented generation",
+      "The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges",
+      "Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model"
+    ]
+  },
+  {
+    "id": "q_03",
+    "question": "When was the paper 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review' published?",
+    "answer": "2026-09-13",
+    "retrieved_doc_ids": [
+      "10.70267/aitia.2026482489",
+      "10.63646/kpqm1958",
+      "10.54254/2755-2721/2026.36624",
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ],
+    "retrieved_titles": [
+      "Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review",
+      "The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges",
+      "Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model",
+      "A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning"
+    ]
+  }
+]

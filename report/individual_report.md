@@ -162,3 +162,7 @@ Kết quả nào khác với kỳ vọng ban đầu?
 
 **Họ và tên:** [Họ và tên]
 **Ngày xác nhận:** [YYYY-MM-DD]
+Beta
+0 / 10
+used queries
+1

@@ -11,7 +11,7 @@
 | STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
 |---:|---|---|---|---|---|
 | 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
-| 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
+| 2 | Cao Đức Hiệp | 2A202602550 | hiepcd@example.com | Data Cleaning & Observability Gate (`cleaning.py`, `quality.py` GX 1.x) | `report/2A202602550_CaoDucHiep.md` |
 | 3 | | | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/<MSSV3>_HoTen.md` |
 | 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
 
@@ -30,14 +30,14 @@
 - **Điều học được / Đóng góp chính:**
   - Hiểu sâu sắc về thiết kế Idempotent Pipeline và quản lý trạng thái luồng dữ liệu đa tầng.
 
-### ## HoVaTen2-MSSV2
-- **Vai trò:** Phụ trách Ingestion, Làm sạch & Phục hồi dữ liệu.
+### ## Cao Đức Hiệp - 2A202602550
+- **Vai trò:** Data Cleaning & Observability Gate (Người 2).
 - **Công việc chi tiết đã hoàn thành:**
-  - Xây dựng module thu thập Crossref API với cơ chế Fallback offline trong `src/ingestion/crossref.py`.
-  - Chuẩn hóa schema, tính toán trường `age_days` và `text_for_embedding` trong `src/ingestion/cleaning.py`.
-  - Thực thi cơ chế Idempotent Repair phục hồi dữ liệu từ raw snapshot.
+  - Chuẩn hóa text, khử trùng lặp theo `paper_id`, tính `age_days` và ghép ngữ cảnh `text_for_embedding` 5 phần chuẩn mực trong `src/ingestion/cleaning.py`.
+  - Thiết lập chốt kiểm dịch chất lượng Great Expectations 1.x Ephemeral Context với 4 Expectations bắt buộc và giám sát Freshness SLA trong `src/observability/quality.py`.
+  - Tạo các artifacts dữ liệu sạch `data/clean/papers_clean.csv`, `papers_clean.json` và báo cáo kiểm định `baseline_quality_report.json`, `freshness_report.json`.
 - **Điều học được / Đóng góp chính:**
-  - Kỹ thuật truy vết nguồn gốc dữ liệu (Data Lineage) và bảo toàn raw snapshot trước khi biến đổi.
+  - Nắm vững kiến trúc Data Observability Gate hiện đại với GX 1.x, chặn đứng lỗi ngầm (Silent Failure) trước khi dữ liệu vào Vector Database.
 
 ### ## HoVaTen3-MSSV3
 - **Vai trò:** Phụ trách RAG, Vector Database & Embedding.
